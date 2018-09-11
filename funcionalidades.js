@@ -28,6 +28,7 @@ const PERSONAJEFUN = (persona)=>{
     console.log(`Soy ${persona.name} llamado desde la funcion `);
 }
 
+
 //Por Id
 function obtener(id){
     const url = `${API_URL_STW}${PERSONA_URL.replace(':id', id )} `;
@@ -36,6 +37,7 @@ function obtener(id){
 
 //llamando a la funcion y pasando el parametro
 obtener(1)
+
 
 //El comportamiento asincrono JS <3
 console.log('LORD JCOB');

@@ -19,8 +19,23 @@ $.get( USER_ONE, OPT, (personaje)=>{
 //console.log(`Hola soy: ${USER_ONE}`)
 
 $.get( NAVE_ESPACIAL, OPT, (nave)=>{
-    console.log(`${yo} Manejo la ${nave.name} por el Universo`)
+    console.log(`Soy ${yo} Y manejo la ${nave.name} por el Universo xD `)
 });
+
+//Persona por funcion
+
+const PERSONAJEFUN = (persona)=>{
+    console.log(`Soy ${persona.name} llamado desde la funcion `);
+}
+
+//Por Id
+function obtener(id){
+    const url = `${API_URL_STW}${PERSONA_URL.replace(':id', id )} `;
+    $.get( url, OPT, PERSONAJEFUN )
+}
+
+//llamando a la funcion y pasando el parametro
+obtener(1)
 
 //El comportamiento asincrono JS <3
 console.log('LORD JCOB');

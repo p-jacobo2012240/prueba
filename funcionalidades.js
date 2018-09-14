@@ -43,3 +43,41 @@ obtener(1)
 console.log('LORD JCOB');
 setTimeout(()=> console.log('hola devs'), 2000 );
 console.log('Hola backend-Devs');
+
+
+/*CLOUSURES */
+//Esto recordara lo ultimo que se le envie una caracteristica increible de javascript
+
+function encadenarProfesion(profesion){
+    return function(nombre){
+        console.log(`hola soy: ${nombre} y mi profesion es ${profesion}`)
+    }
+}
+
+const PROFESION_UNO = encadenarProfesion('Arquitecto');
+const PROFESION_DOS = encadenarProfesion('Ingeniero');
+const PROFESION_TRES = encadenarProfesion('MEDICO')
+
+PROFESION_UNO('Francisco');
+PROFESION_DOS('Pablo');
+PROFESION_TRES('JuanJose');
+
+
+/*Referencia hacia los contextos */
+
+let pablo = {
+    nombre: 'pablo',
+    apellido: 'jacobo',
+    edad: 19
+}
+
+function trabajo(objeto){
+    console.log(`soy:  ${objeto.nombre} y tengo  ${objeto.edad} años, ademas soy DEV`);
+}
+
+function trabajoSinDefinir(){
+    console.log(`hola mi nombre es: ${this.nombre}`);
+}
+
+trabajo(pablo);
+
